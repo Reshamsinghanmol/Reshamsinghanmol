@@ -1,211 +1,212 @@
-# Resham Singh Anmol – Official Website (Static)
+import React from "react";
 
-This repository is the static website for **Resham Singh Anmol**, a celebrated Punjabi singer and performer.
+// Single-file React component (App.jsx)
+// TailwindCSS classes used — ensure Tailwind is set up in your project.
+// Default export component — drop into src/App.jsx in a create-react-app or Vite + React project.
 
-## 🚀 Features
+export default function App() {
+  const socials = [
+    { name: "Facebook", href: "https://www.facebook.com/reshamsinghanmolmusic/" },
+    { name: "Instagram", href: "https://www.instagram.com/reshamsinghanmol/" },
+    { name: "Spotify", href: "https://open.spotify.com/artist/0J2Qb6DxQe3tDfO5Dna3o7" },
+    { name: "Apple Music", href: "https://music.apple.com/in/artist/resham-singh-anmol/" },
+    { name: "YouTube", href: "https://www.youtube.com/channel/UCpvZ24qCDZkLVVD83munWBQ" }
+  ];
 
-- A modern, responsive website built with HTML, CSS & vanilla JavaScript.
-- Pages include Home, About, Events, Contact.
-- Mobile-friendly and SEO optimized (meta tags, structured semantics).
-- Designed for easy customization and deployment (GitHub Pages, Netlify, Vercel etc).
+  return (
+    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans antialiased">
+      <header className="container mx-auto px-6 py-8 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-red-500 flex items-center justify-center text-xl font-bold shadow-lg">RS</div>
+          <div>
+            <h1 className="text-2xl font-extrabold tracking-tight">Resham Singh Anmol</h1>
+            <p className="text-sm text-gray-400">Punjabi Singer • Live Performer • Folk Music</p>
+          </div>
+        </div>
 
-## 📁 Structure
+        <nav className="hidden md:flex gap-6">
+          <a href="#about" className="hover:text-white transition">About</a>
+          <a href="#music" className="hover:text-white transition">Music</a>
+          <a href="#events" className="hover:text-white transition">Events</a>
+          <a href="#booking" className="bg-purple-600 px-4 py-2 rounded-md text-sm font-semibold hover:opacity-95 transition">Book Now</a>
+        </nav>
 
-See the folder structure above. Update images in the `images/` folder, customise text and meta descriptions, and the site is ready to go.
+        <div className="md:hidden">
+          <button className="p-2 rounded-md border border-gray-800">Menu</button>
+        </div>
+      </header>
 
-## 🛠️ How to use
+      <main className="container mx-auto px-6">
+        {/* Hero */}
+        <section className="rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-black to-gray-800 p-8 flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex-1">
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Resham Singh Anmol</h2>
+            <p className="mt-4 text-gray-300 max-w-xl">A passionate stage performer known for high-energy Punjabi folk and wedding shows. Book Resham Singh Anmol for unforgettable live performances across India and internationally.</p>
 
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/resham-singh-anmol-website.git
-   cd resham-singh-anmol-website
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#booking" className="inline-block bg-purple-600 hover:bg-purple-700 px-5 py-3 rounded-md font-semibold">Book for Event</a>
+              <a href="#music" className="inline-block border border-gray-700 px-5 py-3 rounded-md">Listen on Spotify</a>
+            </div>
 
----
+            <div className="mt-6 flex items-center gap-4">
+              {socials.map((s) => (
+                <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className="text-sm text-gray-400 hover:text-white border border-gray-800 px-3 py-2 rounded-md">{s.name}</a>
+              ))}
+            </div>
 
-## index.html
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-400">
+              <div>
+                <strong className="text-gray-200 block">Booking Contact</strong>
+                <a href="tel:+9187637483784" className="block mt-1 text-purple-300">+91 87637 483784</a>
+                <a href="tel:+919050090000" className="block mt-1 text-purple-300">+91 90500 90000</a>
+              </div>
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resham Singh Anmol – Punjabi Singer & Performer</title>
-  <meta name="description" content="Book Resham Singh Anmol – celebrated Punjabi folk singer. Live shows, weddings, corporate events in India." />
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="canonical" href="https://www.reshamsinghanmol.in/" />
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "MusicArtist",
-    "name": "Resham Singh Anmol",
-    "image": "https://www.reshamsinghanmol.in/images/artist-photo.jpg",
-    "url": "https://www.reshamsinghanmol.in/",
-    "genre": "Punjabi Folk",
-    "description": "Resham Singh Anmol is a celebrated Punjabi folk singer performing weddings, live shows and corporate events across India."
-  }
-  </script>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+              <div>
+                <strong className="text-gray-200 block">Genres</strong>
+                <div className="mt-1">Punjabi Folk, Wedding Anthems, Romantic Punjabi Songs, Live Stage Performances</div>
+              </div>
+            </div>
+          </div>
 
-  <section class="hero">
-    <img src="images/hero-banner.jpg" alt="Resham Singh Anmol live performance">
-    <div class="hero-text">
-      <h1>Resham Singh Anmol</h1>
-      <p>Punjabi Folk Singer • Live Shows • Weddings • Events</p>
-      <a class="btn" href="contact.html">Book Now</a>
+          <div className="w-full md:w-80 flex-shrink-0">
+            <div className="bg-gradient-to-b from-gray-800 to-black rounded-xl p-4 shadow-inner">
+              <img src="/hero-resham.jpg" alt="Resham Singh Anmol" className="w-full h-80 object-cover rounded-md border border-gray-700" />
+              <p className="mt-3 text-xs text-gray-500">Photo: Resham Singh Anmol live on stage.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section id="about" className="mt-10 rounded-2xl p-6 bg-gray-850 shadow-inner">
+          <h3 className="text-2xl font-bold">About</h3>
+          <p className="mt-4 text-gray-300">Resham Singh Anmol, born in Nakatpur (Ambala), is celebrated for his powerful voice, emotional delivery, and dedication to Punjabi folk music. With multiple hit songs and millions of views on his videos, he continues to bring authentic Punjabi sound to weddings, festivals, and cultural events.</p>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-4 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-800">
+              <h4 className="font-semibold">Highlights</h4>
+              <ul className="mt-3 text-sm text-gray-400 list-disc list-inside">
+                <li>Energetic live stage presence</li>
+                <li>Hits: Nagni, Taur, Chete Karda, Bhabhi End</li>
+                <li>TV reality show finalist: Awaaz Punjab Di 3</li>
+              </ul>
+            </div>
+
+            <div className="p-4 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-800">
+              <h4 className="font-semibold">Discography</h4>
+              <p className="mt-3 text-sm text-gray-400">Recent releases and singles live on Spotify, Apple Music and YouTube — find the latest tracks on the official music pages linked above.</p>
+            </div>
+
+            <div className="p-4 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-800">
+              <h4 className="font-semibold">Services</h4>
+              <p className="mt-3 text-sm text-gray-400">Weddings, corporate events, college festivals, cultural shows, and private parties — fully produced live performances available across India and internationally.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Music / Latest Posts */}
+        <section id="music" className="mt-10">
+          <h3 className="text-2xl font-bold">Latest Songs & News</h3>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <article className="rounded-lg bg-gray-850 p-4 border border-gray-800 shadow-sm">
+              <h4 className="font-semibold">Pyaar — New Single</h4>
+              <p className="mt-2 text-sm text-gray-400">A romantic single blending traditional Punjabi elements and modern production. Released Aug 14, 2025 (check YouTube official channel).</p>
+              <div className="mt-3 flex gap-2">
+                <a href="#" className="text-xs px-3 py-2 rounded-md border border-gray-700">Listen</a>
+                <a href="#" className="text-xs px-3 py-2 rounded-md border border-gray-700">Watch Video</a>
+              </div>
+            </article>
+
+            {/* Card 2 */}
+            <article className="rounded-lg bg-gray-850 p-4 border border-gray-800 shadow-sm">
+              <h4 className="font-semibold">Popular Hit — Nagni</h4>
+              <p className="mt-2 text-sm text-gray-400">One of the stage favourites with millions of views — often performed live at weddings and festivals.</p>
+              <div className="mt-3 flex gap-2">
+                <a href="#" className="text-xs px-3 py-2 rounded-md border border-gray-700">Listen</a>
+              </div>
+            </article>
+
+            {/* Card 3 */}
+            <article className="rounded-lg bg-gray-850 p-4 border border-gray-800 shadow-sm">
+              <h4 className="font-semibold">Full Albums & Playlists</h4>
+              <p className="mt-2 text-sm text-gray-400">Explore curated playlists for weddings, romantic sets and folk collections across streaming platforms.</p>
+              <div className="mt-3 flex gap-2">
+                <a href="#" className="text-xs px-3 py-2 rounded-md border border-gray-700">Spotify</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Events / Booking */}
+        <section id="events" className="mt-10 rounded-2xl p-6 bg-gray-850 border border-gray-800">
+          <h3 className="text-2xl font-bold">Events & Booking</h3>
+          <p className="mt-3 text-gray-300">Whether it's a wedding reception, Sangeet, corporate evening or cultural festival, Resham Singh Anmol brings full production value with live musicians and powerful vocals.</p>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <h4 className="font-semibold">How to Book</h4>
+              <ol className="list-decimal list-inside text-gray-400">
+                <li>Call the booking numbers listed below.</li>
+                <li>Send event details via the contact form or official social channels.</li>
+                <li>Receive a quote and contract for your event.</li>
+              </ol>
+
+              <div className="mt-4">
+                <strong className="text-gray-200">Booking Contacts</strong>
+                <div className="mt-2 text-purple-300">+91 87637 483784</div>
+                <div className="text-purple-300">+91 90500 90000</div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold">Quick Booking Form</h4>
+              <form className="mt-3 grid gap-3">
+                <input className="bg-gray-900 border border-gray-800 p-3 rounded-md text-gray-200" placeholder="Your name" />
+                <input className="bg-gray-900 border border-gray-800 p-3 rounded-md text-gray-200" placeholder="Email" />
+                <input className="bg-gray-900 border border-gray-800 p-3 rounded-md text-gray-200" placeholder="Phone" />
+                <select className="bg-gray-900 border border-gray-800 p-3 rounded-md text-gray-200">
+                  <option>Wedding</option>
+                  <option>Corporate</option>
+                  <option>Festival</option>
+                  <option>Private Party</option>
+                </select>
+                <textarea className="bg-gray-900 border border-gray-800 p-3 rounded-md text-gray-200" rows="3" placeholder="Event details (date, location, expected audience)"></textarea>
+                <button type="submit" className="bg-purple-600 px-4 py-2 rounded-md font-semibold">Send Inquiry</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery (placeholder) */}
+        <section className="mt-10">
+          <h3 className="text-2xl font-bold">Gallery</h3>
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="rounded-md overflow-hidden border border-gray-800 bg-gray-800">
+                <img src={`/gallery-${i + 1}.jpg`} alt={`gallery-${i + 1}`} className="w-full h-40 object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact / Footer */}
+        <footer className="mt-12 py-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h4 className="font-bold text-lg">Resham Singh Anmol</h4>
+              <p className="text-sm text-gray-400">Live Performer | Desi Vibes | Punjabi Folk</p>
+            </div>
+
+            <div className="flex gap-4 items-center">
+              {socials.map((s) => (
+                <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className="text-sm text-gray-400 hover:text-white">{s.name}</a>
+              ))}
+            </div>
+
+            <div className="text-sm text-gray-400">© {new Date().getFullYear()} Resham Singh Anmol. All Rights Reserved.</div>
+          </div>
+        </footer>
+      </main>
     </div>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <h2>Live Performances</h2>
-      <p>Bringing Punjabi folk energy to weddings, concerts and corporate events across India.</p>
-    </div>
-    <div class="feature">
-      <h2>Weddings & Family Functions</h2>
-      <p>Specialised in creating the perfect vibe for your Punjabi wedding or family celebration.</p>
-    </div>
-    <div class="feature">
-      <h2>Corporate Events</h2>
-      <p>Engaging performances tailored for corporate and brand events — high-energy meets professionalism.</p>
-    </div>
-  </section>
-
-  <section class="testimonial">
-    <h2>What Clients Say</h2>
-    <blockquote>
-      "Resham made our wedding unforgettable. The music, the vibe – everything was perfect!" – Satisfied Client
-    </blockquote>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Resham Singh Anmol. All rights reserved.</p>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  );
 }
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-header nav {
-  background: #222;
-  padding: 1rem;
-  text-align: center;
-}
-header nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-}
-header nav a:hover {
-  color: #f0a500;
-}
-.hero {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.hero img {
-  width: 100%;
-  height: auto;
-  filter: brightness(70%);
-}
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(−50%, −50%);
-}
-.hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-.hero-text p {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #f0a500;
-  color: #222;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-.btn:hover {
-  background: #e09500;
-}
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 2rem;
-}
-.feature {
-  flex: 1 1 300px;
-  margin: 1rem;
-  text-align: center;
-}
-.feature h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-.testimonial {
-  background: #f9f9f9;
-  padding: 2rem;
-  text-align: center;
-  font-style: italic;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #222;
-  color: #fff;
-}
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-  .hero-text p {
-    font-size: 1.2rem;
-  }
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-// Simple script to enable any interactivity as needed
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Example: Smooth scroll for internal links
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      const targetID = link.getAttribute("href").substring(1);
-      const targetEl = document.getElementById(targetID);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-});
