@@ -1,0 +1,211 @@
+# Resham Singh Anmol – Official Website (Static)
+
+This repository is the static website for **Resham Singh Anmol**, a celebrated Punjabi singer and performer.
+
+## 🚀 Features
+
+- A modern, responsive website built with HTML, CSS & vanilla JavaScript.
+- Pages include Home, About, Events, Contact.
+- Mobile-friendly and SEO optimized (meta tags, structured semantics).
+- Designed for easy customization and deployment (GitHub Pages, Netlify, Vercel etc).
+
+## 📁 Structure
+
+See the folder structure above. Update images in the `images/` folder, customise text and meta descriptions, and the site is ready to go.
+
+## 🛠️ How to use
+
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/resham-singh-anmol-website.git
+   cd resham-singh-anmol-website
+
+---
+
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resham Singh Anmol – Punjabi Singer & Performer</title>
+  <meta name="description" content="Book Resham Singh Anmol – celebrated Punjabi folk singer. Live shows, weddings, corporate events in India." />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://www.reshamsinghanmol.in/" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "MusicArtist",
+    "name": "Resham Singh Anmol",
+    "image": "https://www.reshamsinghanmol.in/images/artist-photo.jpg",
+    "url": "https://www.reshamsinghanmol.in/",
+    "genre": "Punjabi Folk",
+    "description": "Resham Singh Anmol is a celebrated Punjabi folk singer performing weddings, live shows and corporate events across India."
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/hero-banner.jpg" alt="Resham Singh Anmol live performance">
+    <div class="hero-text">
+      <h1>Resham Singh Anmol</h1>
+      <p>Punjabi Folk Singer • Live Shows • Weddings • Events</p>
+      <a class="btn" href="contact.html">Book Now</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>Live Performances</h2>
+      <p>Bringing Punjabi folk energy to weddings, concerts and corporate events across India.</p>
+    </div>
+    <div class="feature">
+      <h2>Weddings & Family Functions</h2>
+      <p>Specialised in creating the perfect vibe for your Punjabi wedding or family celebration.</p>
+    </div>
+    <div class="feature">
+      <h2>Corporate Events</h2>
+      <p>Engaging performances tailored for corporate and brand events — high-energy meets professionalism.</p>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <h2>What Clients Say</h2>
+    <blockquote>
+      "Resham made our wedding unforgettable. The music, the vibe – everything was perfect!" – Satisfied Client
+    </blockquote>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Resham Singh Anmol. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+header nav {
+  background: #222;
+  padding: 1rem;
+  text-align: center;
+}
+header nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+header nav a:hover {
+  color: #f0a500;
+}
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  filter: brightness(70%);
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(−50%, −50%);
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #f0a500;
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.btn:hover {
+  background: #e09500;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+}
+.feature {
+  flex: 1 1 300px;
+  margin: 1rem;
+  text-align: center;
+}
+.feature h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.testimonial {
+  background: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+// Simple script to enable any interactivity as needed
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Example: Smooth scroll for internal links
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const targetID = link.getAttribute("href").substring(1);
+      const targetEl = document.getElementById(targetID);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});
